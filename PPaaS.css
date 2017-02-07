@@ -91,6 +91,7 @@ a.button:after {
   content: 'SPREAD THE PARTY';
 }
 a.button:hover {
+  cursor: pointer;
   background-color:#FD767A;
   color: #444;
   text-shadow: 2px 2px #FFF;
