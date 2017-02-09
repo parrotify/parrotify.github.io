@@ -143,6 +143,7 @@ a.button-small {
 }
 
 a.button-small:hover {
+  cursor: pointer;
   background-color:#FD767A;
   color: #444;
   text-shadow: 1px 1px #FFF;
