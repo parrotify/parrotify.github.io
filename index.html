@@ -42,19 +42,19 @@
 </script>
 <body>
     <h1>Party Parrot as a Service</h1>
-    <p>Enter a link to an image:</p>
+    <p>Enter an image URL to overlay:</p>
     <input type="text" id="parrot" value="Enter a URL here" onchange="validateParrot(this.value)" />
     <p id="error" style="color:#ff0000"></p>
-    <p>Set the overlain image's height</p>
+    <p>Set the overlain image height:</p>
     <input type="range" min="0" max="25" value="20" id="height" oninput="showValueHeight(this.value)" onchange="validateParrot()" />
     <span id="rangeHeight">20</span> <span>pixels</span>
-    <p>Set the overlain image's width</p>
+    <p>Set the overlain image widthL</p>
     <input type="range" min="0" max="35" value="20" id="width" oninput="showValueWidth(this.value)" onchange="validateParrot()" />
     <span id="rangeWidth">20</span> <span>pixels</span>
-    <p>Set the overlain image's horizontal position</p>
+    <p>Set the overlain image horizontal position:</p>
     <input type="range" min="-30" max="30" value="0" id="horizontalPosition" oninput="showValueHorizontal(this.value)" onchange="validateParrot()" />
     <span id="rangeHorizontalPosition">0</span> <span>pixels</span>
-    <p>Set the overlain image's vertical position</p>
+    <p>Set the overlain image vertical position:</p>
     <input type="range" min="-30" max="30" value="0" id="verticalPosition" oninput="showValueVertical(this.value)" onchange="validateParrot()" />
     <span id="rangeVerticalPosition">0</span> <span>pixels</span>
     <br />
@@ -63,11 +63,12 @@
     <br />
     <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
     <br />
-    <span>See the URL to the parrot image</span>
+    <span>URL of the new image:</span>
     <br />
     <input type="text" id="parrotImageURL" value="https://ppaas.herokuapp.com/partyparrot" />
     <hr />
     <a class="button-small" href="http://cultofthepartyparrot.com/">Cult of the Party Parrot</a>
     <a class="button-small" href="https://github.com/francoislg/PPaaS">PPaaS on GitHub</a>
+    <a class="button-small" href="https://github.com/parrotify/parrotify.github.io">This page on GitHub</a>
     <hr />
 </body>
