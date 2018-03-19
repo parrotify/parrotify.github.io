@@ -1,79 +1,44 @@
 <!doctype html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel='shortcut icon' type='image/x-icon' href='src/favicon.ico' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/jmhobbs/cultofthepartyparrot.com/master/src/parrot.css">
+    <link rel="stylesheet" type="text/css" href="src/PPaaS.css">
+    <script src="src/PPaaS.js"></script>
+</head>
 <title>
     Party Parrot as a Service
 </title>
-<link rel="stylesheet" type="text/css" href="PPaaS.css">
-<script>
-    const basicParrotImage = "https://ppaas.herokuapp.com/partyparrot"
-    var imageHeightChanged = 20;
-    var imageWidthChanged = 20;
 
-    function parrotify() {
-        var parrotOverlayImage = document.getElementById("parrot").value;
-        var parrotOverlayOffsetX = document.getElementById("horizontalPosition").value;
-        var parrotOverlayOffsetY = document.getElementById("verticalPosition").value;
-        var newImprovedParrot = basicParrotImage + "?overlay=" + parrotOverlayImage + "&overlayWidth=" + imageWidthChanged + "&overlayHeight=" + imageHeightChanged + "&overlayOffsetX=" + parrotOverlayOffsetX + "&overlayOffsetY=" + parrotOverlayOffsetY;
-        document.getElementById("parrotImage").src = newImprovedParrot;
-        document.getElementById("parrotImageURL").value = newImprovedParrot;
-    }
-
-    function getImageSize(url) {
-        var image = new Image();
-        image.onerror = function() {
-            document.getElementById("error").innerHTML="Please enter a valid image URL"
-        }
-        image.onload = function(){
-            imageHeightOriginal = this.height;
-            imageWidthOriginal = this.width;
-            imageHeightChanged = 20;
-            imageWidthChanged = Math.round((imageWidthOriginal/imageHeightOriginal)*imageHeightChanged);
-            document.getElementById("error").innerHTML=""
-            parrotify();
-        }
-        image.src = url;
-    }
-
-    function changeOverlainImageSize(percentage) {
-        percentageDecimal = percentage/100;
-        imageHeightChanged = 20 * percentageDecimal;
-        imageWidthChanged = Math.round((imageWidthOriginal/imageHeightOriginal)*20) * percentageDecimal;
-        parrotify();
-    }
-
-    function showImagePercentage(newValue) {
-        document.getElementById("sizeChangeDisplay").innerHTML=newValue;
-    }
-
-    function showValueHorizontal(newValue) {
-        document.getElementById("rangeHorizontalPosition").innerHTML=newValue;
-    }
-
-    function showValueVertical(newValue) {
-        document.getElementById("rangeVerticalPosition").innerHTML=newValue;
-    }
-</script>
 <body>
     <h1>Party Parrot as a Service</h1>
     <p>Enter an image URL to overlay:</p>
     <input type="text" id="parrot" value="Enter a URL here" onchange="getImageSize(this.value)" />
     <p id="error" style="color:#ff0000"></p>
     <p>Change the image size:</p>
-    <input type="range" min="0" max="200" value="100" id="sizeChange" oninput="showImagePercentage(this.value)" onchange="changeOverlainImageSize(this.value)" />
-    <span id="sizeChangeDisplay">100</span><span>%</span>
+    <input type="range" min="0" max="200" value="100" id="sizeChange" oninput="showImagePercentage(this.value)" onchange="changeOverlainImageSize(this.value)"
+    />
+    <span id="sizeChangeDisplay">100</span>
+    <span>%</span>
     <p>Set the overlain image horizontal position:</p>
-    <input type="range" min="-30" max="30" value="0" id="horizontalPosition" oninput="showValueHorizontal(this.value)" onchange="parrotify()" />
-    <span id="rangeHorizontalPosition">0</span> <span>pixels</span>
+    <input type="range" min="-30" max="30" value="0" id="horizontalPosition" oninput="showValueHorizontal(this.value)" onchange="parrotify()"
+    />
+    <span id="rangeHorizontalPosition">0</span>
+    <span>pixels</span>
     <p>Set the overlain image vertical position:</p>
-    <input type="range" min="-30" max="30" value="0" id="verticalPosition" oninput="showValueVertical(this.value)" onchange="parrotify()" />
-    <span id="rangeVerticalPosition">0</span> <span>pixels</span>
-    <br />
+    <input type="range" min="-30" max="30" value="0" id="verticalPosition" oninput="showValueVertical(this.value)" onchange="parrotify()"
+    />
+    <span id="rangeVerticalPosition">0</span>
+    <span>pixels</span>
+    <div>
     <a class="button-small" onclick="parrotify()">Refresh the parrot!</a>
-    <br />
-    <br />
+    </div>
+    <div>
     <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
-    <br />
-    <span>URL of the new image:</span>
-    <br />
+    </div>
+    <div>URL of the new image:</div>
     <input type="text" id="parrotImageURL" value="https://ppaas.herokuapp.com/partyparrot" />
     <hr />
     <a class="button-small" href="http://cultofthepartyparrot.com/">Cult of the Party Parrot</a>
@@ -81,3 +46,5 @@
     <a class="button-small" href="https://github.com/parrotify/parrotify.github.io">This page on GitHub</a>
     <hr />
 </body>
+
+</html>
