@@ -17,6 +17,27 @@
     <p>Enter an image URL to overlay:</p>
     <input type="text" id="parrot" value="Enter a URL here" onchange="getImageSize(this.value)" />
     <p id="error" style="color:#ff0000"></p>
+    <p>Choose a parrot:</p>
+    <div class="parrotchoice">
+        <p>Original</p>
+        <img src="baseparrots/original.gif">
+    </div>
+    <div class="parrotchoice">
+        <p>Flipped</p>
+        <img src="baseparrots/flipped.gif">
+    </div>
+    <div class="parrotchoice">
+        <p>Middle</p>
+        <img src="baseparrots/middle.gif">
+    </div>
+    <div class="parrotchoice">
+        <p>Conga</p>
+        <img src="baseparrots/conga.gif">
+    </div>
+    <div class="parrotchoice">
+        <p>Bored</p>
+        <img src="baseparrots/bored.gif">
+    </div>
     <p>Change the image size:</p>
     <input type="range" min="0" max="200" value="100" id="sizeChange" oninput="showImagePercentage(this.value)" onchange="changeOverlainImageSize(this.value)"
     />
@@ -33,10 +54,10 @@
     <span id="rangeVerticalPosition">0</span>
     <span>pixels</span>
     <div>
-    <a class="button-small" onclick="parrotify()">Refresh the parrot!</a>
+        <a class="button-small" onclick="parrotify()">Refresh the parrot!</a>
     </div>
     <div>
-    <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
+        <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
     </div>
     <div>URL of the new image:</div>
     <input type="text" id="parrotImageURL" value="https://ppaas.herokuapp.com/partyparrot" />
