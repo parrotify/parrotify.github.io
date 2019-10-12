@@ -1,12 +1,12 @@
-var basicParrotImage = "https://ppaas.herokuapp.com/partyparrot"
-var imageHeightChanged = 20;
-var imageWidthChanged = 20;
+let basicParrotImage = "https://ppaas.herokuapp.com/partyparrot"
+let imageHeightChanged = 20;
+let imageWidthChanged = 20;
 
 function parrotify() {
-    var parrotOverlayImage = document.getElementById("parrot").value;
-    var parrotOverlayOffsetX = document.getElementById("horizontalPosition").value;
-    var parrotOverlayOffsetY = document.getElementById("verticalPosition").value;
-    var newImprovedParrot = basicParrotImage + "?overlay=" + parrotOverlayImage + "&overlayWidth=" + imageWidthChanged + "&overlayHeight=" + imageHeightChanged + "&overlayOffsetX=" + parrotOverlayOffsetX + "&overlayOffsetY=" + parrotOverlayOffsetY;
+    const parrotOverlayImage = document.getElementById("parrot").value;
+    const parrotOverlayOffsetX = document.getElementById("horizontalPosition").value;
+    const parrotOverlayOffsetY = document.getElementById("verticalPosition").value;
+    const newImprovedParrot = basicParrotImage + "?overlay=" + parrotOverlayImage + "&overlayWidth=" + imageWidthChanged + "&overlayHeight=" + imageHeightChanged + "&overlayOffsetX=" + parrotOverlayOffsetX + "&overlayOffsetY=" + parrotOverlayOffsetY;
     document.getElementById("parrotImage").src = newImprovedParrot;
     document.getElementById("parrotImageURL").value = newImprovedParrot;
 }
@@ -17,7 +17,7 @@ function showErrorMessage(){
 }
 
 function getImageSize(url) {
-    var image = new Image();
+    let image = new Image();
     image.onerror = function () {
         showErrorMessage();
     }
@@ -52,16 +52,16 @@ function showValueVertical(newValue) {
 }
 
 function removeSelectedElement() {
-    var parrotchoices = document.getElementsByClassName('parrotchoice');
-    for (var i = 0; i< parrotchoices.length; i++) {
-        if(parrotchoices[i].classList.contains("selected")){
-            parrotchoices[i].classList.remove("selected");
+    const parrotchoices = document.getElementsByClassName('parrotchoice');
+    for (let j = 0; j < parrotchoices.length; j++) {
+        if(parrotchoices[j].classList.contains("selected")){
+            parrotchoices[j].classList.remove("selected");
         }
     }
 }
 
 function determineSelectedParrot(el) {
-    var choice = el.childNodes[1].innerHTML;
+    const choice = el.childNodes[1].innerHTML;
     switch(choice) {
         case "Original":
             basicParrotImage = "https://ppaas.herokuapp.com/partyparrot";
@@ -90,12 +90,12 @@ function determineSelectedParrot(el) {
 }
 
 window.addEventListener('load', function () {
-    var parrotchoices = document.getElementsByClassName('parrotchoice');
-    for (var i = 0; i< parrotchoices.length; i++) {
+    const parrotchoices = document.getElementsByClassName('parrotchoice');
+    for (let i = 0; i < parrotchoices.length; i++) {
         parrotchoices[i].addEventListener('click', function () {
-            if(this.classList.contains("selected")){
+            if (this.classList.contains("selected")) {
                 this.classList.remove("selected");
-            }else{
+            } else {
                 removeSelectedElement();
                 this.classList.add("selected");
                 determineSelectedParrot(this);
