@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel='shortcut icon' type='image/x-icon' href='src/favicon.ico' />
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/jmhobbs/cultofthepartyparrot.com/master/src/parrot.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.rawgit.com/jmhobbs/cultofthepartyparrot.com/master/src/parrot.css">
     <link rel="stylesheet" type="text/css" href="src/PPaaS.css">
     <script src="src/PPaaS.js"></script>
 </head>
@@ -15,64 +16,64 @@
 
 <body>
     <header>
-    <h1>Party Parrot as a Service</h1>
-</header>
-<main>
-    <p>Enter an image URL to overlay:</p>
-    <input type="text" id="parrot" placeholder="Enter a URL here" onchange="getImageSize(this.value)" />
-    <p id="error" style="color:#ff0000"></p>
-    <p>Choose a parrot:</p>
-    <div class="parrotchoice">
-        <p>Original</p>
-        <img src="baseparrots/original.gif">
-    </div>
-    <div class="parrotchoice">
-        <p>Flipped</p>
-        <img src="baseparrots/flipped.gif">
-    </div>
-    <div class="parrotchoice">
-        <p>Middle</p>
-        <img src="baseparrots/middle.gif">
-    </div>
-    <div class="parrotchoice">
-        <p>Conga</p>
-        <img src="baseparrots/conga.gif">
-    </div>
-    <div class="parrotchoice">
-        <p>Bored</p>
-        <img src="baseparrots/bored.gif">
-    </div>
-    <p>Change the image size:</p>
-    <input type="range" min="0" max="200" value="100" id="sizeChange" oninput="showImagePercentage(this.value)" onchange="changeOverlainImageSize(this.value)"
-    />
-    <span id="sizeChangeDisplay">100</span>
-    <span>%</span>
-    <p>Set the overlain image horizontal position:</p>
-    <input type="range" min="-30" max="30" value="0" id="horizontalPosition" oninput="showValueHorizontal(this.value)" onchange="parrotify()"
-    />
-    <span id="rangeHorizontalPosition">0</span>
-    <span>pixels</span>
-    <p>Set the overlain image vertical position:</p>
-    <input type="range" min="-30" max="30" value="0" id="verticalPosition" oninput="showValueVertical(this.value)" onchange="parrotify()"
-    />
-    <span id="rangeVerticalPosition">0</span>
-    <span>pixels</span>
-    <div>
-        <a class="button-small" onclick="parrotify()">Refresh the parrot!</a>
-    </div>
-    <div>
-        <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
-    </div>
-    <div>URL of the new image:</div>
-    <input type="text" id="parrotImageURL" value="https://ppaas.herokuapp.com/partyparrot" />
-</main>
-<footer>
-    <hr />
-    <a class="button-small" href="http://cultofthepartyparrot.com/">Cult of the Party Parrot</a>
-    <a class="button-small" href="https://github.com/francoislg/PPaaS">PPaaS on GitHub</a>
-    <a class="button-small" href="https://github.com/parrotify/parrotify.github.io">This page on GitHub</a>
-    <hr />
-</footer>
+        <h1>Party Parrot as a Service</h1>
+    </header>
+    <main>
+        <p>Enter an image URL to overlay:</p>
+        <input type="text" id="parrot" placeholder="Enter a URL here" onchange="getImageSize(this.value)" />
+        <p id="error" style="color:#ff0000"></p>
+        <p>Choose a parrot:</p>
+        <div class="parrotchoice">
+            <p>Original</p>
+            <img src="baseparrots/original.gif">
+        </div>
+        <div class="parrotchoice">
+            <p>Flipped</p>
+            <img src="baseparrots/flipped.gif">
+        </div>
+        <div class="parrotchoice">
+            <p>Middle</p>
+            <img src="baseparrots/middle.gif">
+        </div>
+        <div class="parrotchoice">
+            <p>Conga</p>
+            <img src="baseparrots/conga.gif">
+        </div>
+        <div class="parrotchoice">
+            <p>Bored</p>
+            <img src="baseparrots/bored.gif">
+        </div>
+        <p>Change the image size:</p>
+        <input type="range" min="0" max="200" value="100" id="sizeChange" oninput="showImagePercentage(this.value)"
+            onchange="changeOverlainImageSize(this.value)" />
+        <span id="sizeChangeDisplay">100</span>
+        <span>%</span>
+        <p>Set the overlain image horizontal position:</p>
+        <input type="range" min="-30" max="30" value="0" id="horizontalPosition"
+            oninput="showValueHorizontal(this.value)" onchange="parrotify()" />
+        <span id="rangeHorizontalPosition">0</span>
+        <span>pixels</span>
+        <p>Set the overlain image vertical position:</p>
+        <input type="range" min="-30" max="30" value="0" id="verticalPosition" oninput="showValueVertical(this.value)"
+            onchange="parrotify()" />
+        <span id="rangeVerticalPosition">0</span>
+        <span>pixels</span>
+        <div>
+            <a class="button-small" onclick="parrotify()">Refresh the parrot!</a>
+        </div>
+        <div>
+            <img src="https://ppaas.herokuapp.com/partyparrot" id="parrotImage">
+        </div>
+        <div>URL of the new image:</div>
+        <input type="text" id="parrotImageURL" value="https://ppaas.herokuapp.com/partyparrot" />
+    </main>
+    <footer>
+        <hr />
+        <a class="button-small" href="http://cultofthepartyparrot.com/">Cult of the Party Parrot</a>
+        <a class="button-small" href="https://github.com/francoislg/PPaaS">PPaaS on GitHub</a>
+        <a class="button-small" href="https://github.com/parrotify/parrotify.github.io">This page on GitHub</a>
+        <hr />
+    </footer>
 </body>
 
 </html>
