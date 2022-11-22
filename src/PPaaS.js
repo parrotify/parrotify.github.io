@@ -1,4 +1,4 @@
-let basicParrotImage = "https://ppaas.herokuapp.com/partyparrot"
+let basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot"
 let imageHeightChanged = 20;
 let imageWidthChanged = 20;
 
@@ -64,27 +64,27 @@ function determineSelectedParrot(el) {
     const choice = el.childNodes[1].innerHTML;
     switch(choice) {
         case "Original":
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot";
             parrotify()
             break;
         case "Flipped":
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot/rightparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot/rightparrot";
             parrotify()
             break;
         case "Middle":
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot/middleparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot/middleparrot";
             parrotify()
             break;
         case "Conga":
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot/congaparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot/congaparrot";
             parrotify()
             break;
         case "Bored":
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot/boredparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot/boredparrot";
             parrotify()
             break;
         default:
-            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot";
+            basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot";
             parrotify()
     }
 }
