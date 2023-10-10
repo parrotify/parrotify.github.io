@@ -2,11 +2,13 @@ let basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot
 let imageHeightChanged = 20;
 let imageWidthChanged = 20;
 
-function parrotify() {
+function parrotify(scale=1) {
     const parrotOverlayImage = document.getElementById("parrot").value;
-    const parrotOverlayOffsetX = document.getElementById("horizontalPosition").value;
-    const parrotOverlayOffsetY = document.getElementById("verticalPosition").value;
-    const newImprovedParrot = basicParrotImage + "?overlay=" + parrotOverlayImage + "&overlayWidth=" + imageWidthChanged + "&overlayHeight=" + imageHeightChanged + "&overlayOffsetX=" + parrotOverlayOffsetX + "&overlayOffsetY=" + parrotOverlayOffsetY;
+    const parrotOverlayOffsetX = parseInt(document.getElementById("horizontalPosition" ).value)*scale;
+    const parrotOverlayOffsetY = parseInt(document.getElementById("verticalPosition").value)*scale;
+    const scaledHeight = imageHeightChanged * scale;
+    const scaledWidth = imageWidthChanged * scale;
+    const newImprovedParrot = basicParrotImage + "?overlay=" + parrotOverlayImage + "&overlayWidth=" + scaledWidth + "&overlayHeight=" + scaledHeight + "&overlayOffsetX=" + parrotOverlayOffsetX + "&overlayOffsetY=" + parrotOverlayOffsetY;
     document.getElementById("parrotImage").src = newImprovedParrot;
     document.getElementById("parrotImageURL").value = newImprovedParrot;
 }
@@ -82,6 +84,10 @@ function determineSelectedParrot(el) {
         case "Bored":
             basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot/boredparrot";
             parrotify()
+            break;
+        case "Mega":
+            basicParrotImage = "https://ppaas.herokuapp.com/partyparrot/mega";
+            parrotify(10)
             break;
         default:
             basicParrotImage = "https://partyparrotasaservice.vercel.app/api/partyparrot";
